@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home{
+    height: 100vh;
+}
+
+.animation2{
+    animation: rotate 0.4s ease-in 0s 1; 
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.animation1{
+    position: relative;
+    animation: toptobottom 0.4s ease-in 0s 1; 
+}
+
+@keyframes toptobottom {
+    from{
+        top: -50px;
+    }
+    to{
+        top: 10px;
+    }
+}
+
+.animation3{
+    position: relative;
+    
+    animation: lefttoright 0.3s ease-out 0s 1; 
+}
+
+@keyframes lefttoright {
+    from{
+        left: -500px;
+    }
+    to{
+        left: 10px;
+    }
+}
+
+.container{
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%,-50%);
+}
+.bgimg{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn-begin{
+    left: 49%;
+    top: 70%;
+    transform: translate(-50%,-50%);
+}

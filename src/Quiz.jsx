@@ -110,7 +110,7 @@ const Quiz = () => {
     <>
       <div className="w-10/12 m-auto mb-16 mt-16 shadow-sm shadow-gray-500 p-2 rounded relative bg-purple-100">
         {showResult ? (
-          <Result score={score} totalQuestions={totalQuestions} />
+          <Result score={score} totalQuestions={totalQuestions} questions={attemptedQuestions} />
         ) : (
           <div className="Quiz">
             <div className="text-center text-xl p-1 font-medium lg:text-3xl mb-4 border-2 border-gray-300 rounded-md shadow-inner shadow-md shadow-purple-200">

@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter , RouterProvider, createBrowserRouter} from 'react-router-dom'
 import Quiz from './Quiz.jsx'
 import Home from './Home.jsx'
-
+import Result from './Result.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home />
+      },
+      {
+        path:"/result",
+        element:<Result />
       }
     ],
   },

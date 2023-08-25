@@ -8,7 +8,7 @@ const AddQuiz = () => {
   const [questions, setQuestions] = useState([]);
   const [question, setQuestion] = useState();
   const [quiz, setQuiz] = useState({});
-  const [correctAns, setCorrectAns] = useState(null);
+  const [correctOption, setCorrectOption] = useState(null);
   const [isSendAddQuizDataToBE,setIsSendAddQuizDataToBE]=useState(false)
   const handleAddOption = () => {
     setOptions((prevData) => [...prevData, option]);
@@ -35,17 +35,17 @@ const AddQuiz = () => {
       options: options,
       question: question,
       id: questions.length,
-      correctAns:correctAns
+      correctOption:correctOption
     };
     setQuestions((prevData) => [...prevData, questionObj]);
     setOptions([])
-    setCorrectAns("")
+    setCorrectOption("")
     setOption("")
     setQuestion("")
   };
 
-  const handleCorrectAns = (e) => {
-    setCorrectAns(e.target.value);
+  const handleCorrectOption = (e) => {
+    setCorrectOption(e.target.value);
   };
 
   useEffect(() => {
@@ -125,10 +125,10 @@ const AddQuiz = () => {
           <input
             inputmode="numeric"
             patterns="[0-4]*"
-            name="correctAns"
+            name="correctOption"
             id=""
-            value={correctAns}
-            onChange={handleCorrectAns}
+            value={correctOption}
+            onChange={handleCorrectOption}
           />
         </label>
         {options && options.map((option) => <div className="">{option}</div>)}

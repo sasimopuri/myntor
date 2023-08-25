@@ -6,6 +6,7 @@ import { BrowserRouter , RouterProvider, createBrowserRouter} from 'react-router
 import Quiz from './Quiz.jsx'
 import Home from './Home.jsx'
 import Result from './Result.jsx'
+import AddQuiz from './Admin/AddQuiz.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path:"/result",
         element:<Result />
+      },
+      {
+        path:"/addquiz",
+        element:<AddQuiz />
       }
     ],
   },

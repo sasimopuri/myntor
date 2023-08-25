@@ -1,29 +1,14 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabase/supabaseClient";
-supabase
 const Result = (props) => {
-  // const totalQuestions=props.totalQuestions
-  // const score=props.score
-  // const questions=props.attemptedQuestions
-const [questions,setQuestions]=useState()
-const [score,setScore]=useState()
-const [totalQuestions,setTotalQuestions]=useState()
-  useEffect(() => {
-    const fetch_quiz = async () => {
-      const { data, error } = await supabase.from("result").select("");
-      if (error) {
-        console.log(error);
-      }
-      if (data) {
-        // setQuizData(data);
-        console.log(data);
-        setQuestions(data[0]?.questions);
-        setTotalQuestions(data[0]?.questions.length);
-        setScore(data[0].score)
-      }
-    };
-    fetch_quiz();
-  });
+  const [questions, setQuestions] = useState(props.questions);
+  const [score, setScore] = useState(props.score);
+  const [totalQuestions, setTotalQuestions] = useState(props.totalQuestions);
+
+  useEffect(()=>{
+    console.log("res",props);
+  })
+
   return (
     <div className="p-2 m-6 border border-purple-300 shadow-md rounded-md bg-purple-200 flex flex-col gap-1 justify-center items-center">
       <div className="score-card">

@@ -35,7 +35,7 @@ const AddQuiz = () => {
       options: options,
       question: question,
       id: questions.length,
-      correctOption:correctOption
+      correctOption:parseInt(correctOption)
     };
     setQuestions((prevData) => [...prevData, questionObj]);
     setOptions([])
@@ -47,10 +47,6 @@ const AddQuiz = () => {
   const handleCorrectOption = (e) => {
     setCorrectOption(e.target.value);
   };
-
-  useEffect(() => {
-    console.log(option);
-  });
 
   const sendaddQuizDataToBE=()=>{
     setQuiz(()=>({
@@ -123,8 +119,7 @@ const AddQuiz = () => {
         <label htmlFor="">
           Correct Answer
           <input
-            inputmode="numeric"
-            patterns="[0-4]*"
+            type="number"
             name="correctOption"
             id=""
             value={correctOption}

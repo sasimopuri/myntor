@@ -4,7 +4,7 @@ const Result = (props) => {
   const [questions, setQuestions] = useState(props.questions);
   const [score, setScore] = useState(props.score);
   const [totalQuestions, setTotalQuestions] = useState(props.totalQuestions);
-
+  const [topic,setTopic]=useState(props.topic)
   useEffect(()=>{
     console.log("res",props);
   })
@@ -12,13 +12,12 @@ const Result = (props) => {
   return (
     <div className="p-2 m-6 border border-purple-300 shadow-md rounded-md bg-purple-200 flex flex-col gap-1 justify-center items-center">
       <div className="score-card">
+        <p>Topic:{topic}</p>
         <p>
           <span>Correct Questions:{score} </span>
-          {}
         </p>
         <p>
           <span>Total Questions: {totalQuestions} </span>
-          {}
         </p>
       </div>
       <div className="border border-purple-100 p-1">

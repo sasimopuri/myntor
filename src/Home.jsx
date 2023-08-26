@@ -16,7 +16,7 @@ const Home = () => {
             Myntor
           </div>
         </div>
-        <img className="bgimg w-52 absolute" src={bgimg} alt="" />
+        <Link to={"/showresults"}><img className="bgimg w-52 absolute" src={bgimg} alt="" /></Link>
         <div className="dropdown">
          <input type="text" name="" id="" onChange={handleTopicChange}/>
         </div>

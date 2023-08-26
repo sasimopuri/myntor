@@ -7,6 +7,7 @@ import Quiz from './Quiz.jsx'
 import Home from './Home.jsx'
 import Result from './Result.jsx'
 import AddQuiz from './Admin/AddQuiz.jsx'
+import ShowResults from './Admin/ShowResults.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
       {
         path:"/addquiz",
         element:<AddQuiz />
+      },
+      {
+        path:"/showresults",
+        element:<ShowResults />
       }
-    ],
+      ],
   },
 ]);
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "./supabase/supabaseClient";
 import Result from "./Result";
 import useSendResultData from "./Hooks/useSendResult";
+import { useParams } from "react-router-dom";
 
 const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -13,11 +14,12 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [totalQuestions, setTotalQuestions] = useState(null);
-  const [topic, setTopic] = useState(null);
   const [attemptedQuestions, setAttemptedQuestions] = useState([]);
+
+  let {topic}=useParams()
   useEffect(() => {
     const fetch_quiz = async () => {
-      const { data, error } = await supabase.from("quizzes").select("");
+      const { data, error } = await supabase.from("quizzes").select().eq("topic",topic);
       if (error) {
         console.log(error);
       }
@@ -25,17 +27,11 @@ const Quiz = () => {
         setQuizData(data);
         console.log(data);
         setQuestions(data[0]?.questions);
-        setTotalQuestions(data[0]?.questions.length);
-        setTopic(data[0]?.topic);
+        setTotalQuestions(data[0]?.questions?.length);
       }
     };
     fetch_quiz();
   }, []);
-
-  useEffect(() => {
-    // console.log(questions);
-    console.log(score);
-  }, [score]);
 
   useEffect(() => {
     if (questions && questions.length === 1) {

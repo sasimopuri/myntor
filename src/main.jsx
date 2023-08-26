@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     // loader: rootLoader,
     children: [
       {
-        path: "quiz",
+        path: "quiz/:topic",
         element: <Quiz />,
         // loader: teamLoader,
       },

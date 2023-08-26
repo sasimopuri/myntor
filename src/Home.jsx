@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <div className="home bg-purple-50 h-full">
         <div className="container absolute flex flex-col items-center">
-          <div className="text-3xl font-semibold animation1">WELCOME</div>
+          <Link to={`/addquiz`}><div className="text-3xl font-semibold animation1">WELCOME</div></Link>
           <div className="text-6xl fonr-bold animation2">2</div>
           <div className="text-5xl font-bold text-purple-500 animation3">
             Myntor

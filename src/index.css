@@ -60,6 +60,13 @@
 }
 .btn-begin{
     left: 49%;
-    top: 72%;
+    top: 76%;
+    transform: translate(-50%,-50%);
+}
+
+.dropdown{
+    position: absolute;
+    top: 75%;
+    left: 50%;
     transform: translate(-50%,-50%);
 }

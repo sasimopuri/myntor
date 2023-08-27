@@ -12,12 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // loader: rootLoader,
     children: [
       {
         path: "quiz/:topic",
         element: <Quiz />,
-        // loader: teamLoader,
       },
       {
         path:"/",

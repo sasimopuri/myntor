@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { BrowserRouter , RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter} from 'react-router-dom'
 import Quiz from './Quiz.jsx'
 import Home from './Home.jsx'
 import Result from './Result.jsx'
 import AddQuiz from './Admin/AddQuiz.jsx'
 import ShowResults from './Admin/ShowResults.jsx'
+import SignUp from './Authentication/SignUp.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
         element: <Quiz />,
       },
       {
-        path:"/",
+        path:"/home",
         element:<Home />
       },
       {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:"/showresults",
         element:<ShowResults />
+      },
+      {
+        path:"/",
+        element:<SignUp />
       }
       ],
   },

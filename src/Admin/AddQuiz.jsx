@@ -73,7 +73,8 @@ const AddQuiz = () => {
   return (
     <>
       <div className="">
-        <label htmlFor="topic">
+        <div className="">
+          <label htmlFor="topic">
           Topic:
           <input
             type="text"
@@ -106,28 +107,31 @@ const AddQuiz = () => {
           />
         </label>
         <label htmlFor="option" className="flex">
-          Option
+          Option :
           <input
             type="text"
             name="topic"
             id="topic"
+            className="ml-1"
             value={option}
             onChange={handleOptionChange}
           />
-          <div onClick={handleAddOption}>add</div>
+          <div onClick={handleAddOption} className="ml-1">Add</div>
         </label>
+          <div className="mt-2">{options && options.map((option) => <div className="p-2 bg-purple-100 m-1 text-center w-2/3">{option}</div>)}</div>
         <label htmlFor="">
-          Correct Answer
+          Correct Answer :
           <input
             type="number"
             name="correctOption"
+            className="ml-1 mt-2"
             id=""
             value={correctOption}
             onChange={handleCorrectOption}
           />
         </label>
-        {options && options.map((option) => <div className="">{option}</div>)}
-        <button onClick={handleAddQuestion}>Add question</button>
+        </div>
+        <button onClick={handleAddQuestion} className="relative left-1/3 ml-20 bg-purple-300 p-2 rounded-md">Add question</button>
         <hr />
         {questions.map((question)=>(
             <>

@@ -6,6 +6,10 @@
     height: 100vh;
 }
 
+*{
+    font-family: sans-serif;
+}
+
 .animation2{
     animation: rotate 0.4s ease-in 0s 1; 
 }

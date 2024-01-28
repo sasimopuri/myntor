@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SignUp.css";
+import { supabase } from "../supabase/supabaseClient";
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,9 +14,28 @@ const SignUp = () => {
     }));
   };
 
-  const handleOnFormSubmit = (e) => {
+  const handleOnFormSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            name: formData.name,
+          },
+        },
+      });
+      if (error) {
+        alert(error);
+      }
+      if (data) {
+        alert("Check your email inbox and verify :)");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
